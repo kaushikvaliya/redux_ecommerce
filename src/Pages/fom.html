@@ -1,0 +1,245 @@
+<!-- <!DOCTYPE html>
+<html>
+
+<head>
+    <title>Login</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-top: 100px;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            box-sizing: border-box;
+            margin-bottom: 20px;
+        }
+
+        input[type="submit"] {
+            width: 100%;
+            padding: 8px 16px;
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        .error-message {
+            color: red;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h2>Login</h2>
+        <form>
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" required>
+
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" required>
+
+            <input type="submit" value="Login">
+        </form>
+        <p class="error-message"></p>
+    </div>
+    <script>
+
+
+
+    </script>
+
+</body>
+
+</html> -->
+
+
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>JSON Table with Search</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        tr:hover {
+            background-color: #f5f5f5;
+        }
+
+        .search-container {
+            margin-bottom: 20px;
+        }
+
+        .search-input {
+            padding: 8px;
+            width: 300px;
+        }
+
+        .download-button {
+            padding: 10px 20px;
+            color: #467db4;
+            text-decoration: none;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="search-container">
+        <input type="text" id="search-input" class="search-input" placeholder="Search...">
+    </div>
+
+    <table id="json-table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>c Name</th>
+                <th>c ID</th>
+                <th>c IP</th>
+                <th>Download</th>
+                <th>a</th>
+                <th>d</th>
+                <!-- Add more table headers as needed -->
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Table body will be generated dynamically -->
+        </tbody>
+    </table>
+
+    <script>
+        // JSON data
+        const jsonData = [
+            {
+                "id": 1,
+                "name": "John Doe",
+                "email": "john@example.com",
+                "publicIp": [
+                    { "ip": "ip - 1", "tag": "tag - 1" },
+                    { "ip": "ip-2", "tag": "tag-2" }
+                ],
+                "downloadLink": "link1"
+            },
+            {
+                "id": 2,
+                "name": "Jane Smith",
+                "email": "jane@example.com",
+                "downloadLink": "link2",
+                "publicIp": [
+                    { "ip": "ip - 1", "tag": "tag - 1" },
+                    { "ip": "ip-2", "tag": "tag-2" }
+                ],
+            },
+            {
+                "id": 3,
+                "name": "Mike Johnson",
+                "email": "mike@example.com",
+                "downloadLink": "link3",
+                "publicIp": [
+                    { "ip": "ip - 1", "tag": "tag - 1" },
+                    { "ip": "ip-2", "tag": "tag-2" }
+                ],
+            }
+            // Add more JSON objects as needed
+        ];
+
+        // Generate the HTML table from the JSON data
+        const tableBody = document.querySelector('#json-table tbody');
+        const searchInput = document.getElementById('search-input');
+
+        function generateTable() {
+            tableBody.innerHTML = '';
+
+            const searchText = searchInput.value.toLowerCase();
+            const filteredData = jsonData.filter(obj => {
+                return Object.values(obj).some(value =>
+                    String(value).toLowerCase().includes(searchText)
+                );
+            });
+
+            filteredData.forEach(obj => {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+          <td>${obj.id}</td>
+          <td>${obj.name}</td>
+          <td>
+            <table> 
+                <tr><td> ${obj.email} </td> </tr>
+                <tr><td> ${obj.email} </td> </tr>
+                <tr><td> ${obj.email} </td> </tr>
+                <tr><td> ${obj.email} </td> </tr>
+                <tr><td> ${obj.email} </td> </tr>
+            </table>
+            
+            </td>
+          <td><a href="${obj.downloadLink}" class="download-button" download>Download</a></td>
+          <!-- Add more table cells as needed -->
+        `;
+                tableBody.appendChild(row);
+            });
+        }
+
+        searchInput.addEventListener('input', generateTable);
+
+        // Initial table generation
+        generateTable();
+    </script>
+</body>
+
+</html>

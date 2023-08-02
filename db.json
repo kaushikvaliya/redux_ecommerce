@@ -1,0 +1,137 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "name": "Satheesh",
+      "email": "Sat@mail.com",
+      "password": "South street"
+    },
+    {
+      "id": 2,
+      "name": "John",
+      "email": "john@mail.com",
+      "password": "North street"
+    },
+    {
+      "id": 3,
+      "name": "Robert",
+      "email": "robert@mail.com",
+      "password": "East street"
+    },
+    {
+      "id": 3,
+      "name": "Robert",
+      "email": "robert@mail.com",
+      "password": "East street"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  },
+  "users": [
+    {
+      "role": "1",
+      "name": "kaushik",
+      "email": "valiya.kaushik001@gmail.com",
+      "password": "2233",
+      "id": 1
+    },
+    {
+      "name": "Alice Johnsonh",
+      "password": "alicejohnson@example.com",
+      "email": "password456",
+      "id": 2
+    },
+    {
+      "email": "kaushik002@gmail.com",
+      "password": "002",
+      "role": "2",
+      "id": 3
+    },
+    {
+      "email": "valiya@gmail.com",
+      "password": "1234",
+      "role": "2",
+      "id": 4
+    },
+    {
+      "email": "kaushik222@gmail.com",
+      "password": "222",
+      "role": "2",
+      "id": 5
+    },
+    {
+      "email": "vivek003@gmail.com",
+      "password": "003",
+      "role": "2",
+      "id": 6
+    },
+    {
+      "email": "uuuu@gmail.com",
+      "password": "12345",
+      "role": "2",
+      "id": 7
+    },
+    {
+      "email": "jjj@gmail.com",
+      "password": "456",
+      "role": "2",
+      "id": 8
+    },
+    {
+      "email": "kaushik33@gmile.com",
+      "password": "3333",
+      "role": "2",
+      "id": 9
+    },
+    {
+      "email": "k22@gmail.com",
+      "password": "k22",
+      "role": "2",
+      "id": 10
+    },
+    {
+      "email": "k23@gmail.com",
+      "password": "k23",
+      "role": "2",
+      "id": 11
+    },
+    {
+      "email": "k23@gmail.com",
+      "password": "k23",
+      "role": "2",
+      "id": 12
+    },
+    {
+      "email": "k22@gmail.com",
+      "password": "k22",
+      "role": "2",
+      "id": 13
+    },
+    {
+      "email": "k22@gmail.com",
+      "password": "1234",
+      "role": "2",
+      "id": 14
+    },
+    {
+      "email": "gg@gmail.com",
+      "password": "12345",
+      "role": "2",
+      "id": 15
+    },
+    {
+      "email": "kaushik@gmail.com",
+      "password": "777888",
+      "role": "2",
+      "id": 16
+    }
+  ]
+}
